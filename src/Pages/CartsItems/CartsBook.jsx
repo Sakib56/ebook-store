@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const CartsBook = () => {
     const [carts, setCarts] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:3000/allCartsBook`)
+        fetch(`https://ebook-server-site.vercel.app/allCartsBook`)
             .then(res => res.json())
             .then(data => {
                 setCarts(data)
@@ -28,7 +28,7 @@ const CartsBook = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:3000/allCartsBook/${_id}`, {
+                    fetch(`https://ebook-server-site.vercel.app/allCartsBook/${_id}`, {
                         method: "DELETE"
                     })
                         .then(data => {
@@ -65,12 +65,12 @@ const CartsBook = () => {
                         </tr>
                     </thead>
                     <tbody className='text-sm md:text-lg italic'>
-                        {carts.map((cart, index) => <tr key={cart._id}>
+                        {carts.map((cart, index) => <tr className='hover:bg-slate-200' key={cart._id}>
                             <td>{index + 1}</td>
                             <td><img className='w-16 h-16 rounded-full' src={cart.image} alt="" /></td>
                             <td>{cart.name}</td>
                             <td>{cart.authorName}</td>
-                            <td>{cart.price}</td>
+                            <td>{cart.price} tk</td>
                             <td onClick={() => handleDelete(cart._id)}><button className='text-red-500 text-lg'><FaTrash /></button></td>
                         </tr>)}
                     </tbody>

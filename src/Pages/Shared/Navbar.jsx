@@ -6,7 +6,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 const Navbar = () => {
     const [carts, setCarts] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:3000/allCartsBook`)
+        fetch(`https://ebook-server-site.vercel.app/allCartsBook`)
             .then(res => res.json())
             .then(data => {
                 setCarts(data)

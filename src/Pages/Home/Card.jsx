@@ -11,7 +11,7 @@ const Card = ({ book }) => {
         const cartBook = { name, authorName, image, price }
         console.log(cartBook)
 
-        fetch('http://localhost:3000/addCarts', {
+        fetch('https://ebook-server-site.vercel.app/addCarts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
