@@ -48,14 +48,14 @@ const CartsBook = () => {
 
     }
     return (
-        <div className='max-w-6xl mx-auto md:py-10'>
+        <div className='max-w-6xl mx-auto md:py-10 md:min-h-[500px]'>
             <h1 className='text-center font-bold text-2xl'>Your Carts Items</h1>
-            <h1 className='text-center font-bold text-green-500 text-lg my-5 italic '>Total Price: {totalPrice} Tk</h1>
+            <h1 className='text-center font-bold text-green-500 md:text-lg my-2 md:my-5 italic '>Total Price: {totalPrice} Tk</h1>
             <div className="overflow-x-auto">
-                <table className="table mt-7">
+                <table className="table mt-4 md:mt-7">
                     {/* head */}
                     <thead>
-                        <tr className='text-lg'>
+                        <tr className='text-base md:text-lg'>
                             <th>Sl</th>
                             <th>Image</th>
                             <th>BookName</th>
@@ -64,7 +64,7 @@ const CartsBook = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody className='text-lg italic'>
+                    <tbody className='text-sm md:text-lg italic'>
                         {carts.map((cart, index) => <tr key={cart._id}>
                             <td>{index + 1}</td>
                             <td><img className='w-16 h-16 rounded-full' src={cart.image} alt="" /></td>

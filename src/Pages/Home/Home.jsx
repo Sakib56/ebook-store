@@ -14,7 +14,8 @@ const Home = () => {
 
     return (
         <div className='bg-slate-200 md:py-10'>
-            <div className='grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto gap-5'>
+            <h1 className='text-center text-lg mb-5 font-bold md:text-2xl'>All Books Collection</h1>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2 md:p-10 lg:p-0 max-w-6xl mx-auto gap-5'>
                 {books.map(book => <Card book={book} key={book._id}></Card>)}
             </div>
         </div>

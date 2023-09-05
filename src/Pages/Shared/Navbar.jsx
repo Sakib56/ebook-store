@@ -11,7 +11,7 @@ const Navbar = () => {
             .then(data => {
                 setCarts(data)
             })
-    }, [])
+    }, [carts])
     // console.log(carts.length);
 
     return (
